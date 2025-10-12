@@ -5,4 +5,4 @@ speed (speed.lua)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/speed.lua", true))()
 
 kill (Kill.lua)
-loadstring(game:HttpGet("http://rew.githubusercontent.com/Nuermek/project-pro/main/Kill.lua", true))()
+loadstring(game:HttpGet("https://rew.githubusercontent.com/Nuermek/project-pro/main/Kill.lua", true))()
