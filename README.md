@@ -9,7 +9,3 @@ version = 1.0.0
 ปรับความเร็วในการเดิน,วิ่ง(speed.lua)
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/speed.lua", true))()
-
-scan ไอเทม ที่อยู่ไกลกว่า 10 stud และเก็บของอัตโนมัติเมื่อไอเทมอยู่ใกล้กว่า 10 stud (Item.lua)
-```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/Item.lua"))()
