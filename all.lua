@@ -1,9 +1,3 @@
---[[============================
-  Dead Rail : Scan GUI + NPC Damage
-  Create by Somtank
-==============================]]
-
--- ฝั่ง Client (GUI)
 local UIS = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -35,12 +29,10 @@ CloseButton.Text = "X"
 CloseButton.BackgroundColor3 = Color3.fromRGB(255, 52, 52)
 CloseButton.TextColor3 = Color3.new(0, 0, 0)
 
--- ระบบปิด UI
 CloseButton.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
 end)
 
--- ระบบเปิด/ปิดสแกน
 local Run = false
 TextButton.MouseButton1Click:Connect(function()
 	if Run then
@@ -52,7 +44,6 @@ TextButton.MouseButton1Click:Connect(function()
 	end
 end)
 
--- ฝั่ง Server (ลดเลือด NPC)
 task.spawn(function()
 	while task.wait(1) do
 		if Run then
