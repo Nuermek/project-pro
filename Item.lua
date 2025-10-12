@@ -107,7 +107,7 @@ task.spawn(function()
                         if part:IsA("Part") or part:IsA("MeshPart") or part:IsA("UnionOperation") then
                             if character.PrimaryPart then
                                 local distance = (part.Position - character.PrimaryPart.Position).Magnitude
-                                if distance > 50 then
+                                if distance > 10 then
                                     tooFar = true
                                     break
                                 end
@@ -129,6 +129,6 @@ task.spawn(function()
                 end
             end
         end
-        task.wait(0.50)  -- หน่วงเวลาเพื่อลดภาระ CPU
+        task.wait(0.01)  -- หน่วงเวลาเพื่อลดภาระ CPU
     end
 end)
