@@ -1,1 +1,5 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/all.lua", true))()
+Item (Item.lua)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/Item.lua", true))()
+
+speed (speed.lua)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/speed.lua", true))()
