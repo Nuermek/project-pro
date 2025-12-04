@@ -2,12 +2,11 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local UserInputService = game:GetService("UserInputService")
 local function sendFakeInput()
     local camera = workspace.CurrentCamera
-    camera.CFrame = camera.CFrame * CFrame.Angles(0, 0.001, 0) -- หมุนกล้องเล็ก ๆ
+    camera.CFrame = camera.CFrame * CFrame.Angles(0, 0.001, 0)
 end
 local afkEnabled = false
 local player = game.Players.LocalPlayer
-local moveDistance = 0.2       -- ระยะที่ให้ขึ้น (stud)
-local interval = 10 * 60       -- 10 นาที (600 วินาที)
+local interval = 10 * 60
 local Window = Library.CreateLib("NUNU PRO", "DarkTheme")
 local Tab = Window:NewTab("basic")
 local Section = Tab:NewSection("afk")
