@@ -29,14 +29,18 @@ end)
 Section:NewSlider("เดินเร็ว 16-500", "SliderInfo", 500, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
+-- Drag System (แข็งที่สุด)
 local UIS = game:GetService("UserInputService")
+
 local function makeDraggable(frame)
     local dragging, dragInput, startPos, startMousePos
+
     frame.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
             dragging = true
             startMousePos = input.Position
             startPos = frame.Position
+
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
                     dragging = false
@@ -44,11 +48,13 @@ local function makeDraggable(frame)
             end)
         end
     end)
+
     frame.InputChanged:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseMovement then
             dragInput = input
         end
     end)
+
     UIS.InputChanged:Connect(function(input)
         if input == dragInput and dragging then
             local delta = input.Position - startMousePos
@@ -61,16 +67,15 @@ local function makeDraggable(frame)
         end
     end)
 end
-local gui = game.CoreGui:FindFirstChild("NUNU PRO")
-local frame
 
-for i,v in pairs(gui:GetDescendants()) do
-    if v:IsA("Frame") or v:IsA("ImageLabel") then
-        frame = v
-        break
-    end
-end
 
-if frame then
-    makeDraggable(frame)
+-- หา frame ใหญ่ที่สุดเพื่อลาก (โคตรชัวร์)
+task.wait(1)
+local main = game.CoreGui["NUNU PRO"]:FindFirstChild("Main")
+
+if main then
+    makeDraggable(main)
+    print("Dragging Enabled on: Main")
+else
+    warn("Main frame not found!")
 end
