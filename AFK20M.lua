@@ -61,4 +61,4 @@ local function makeDraggable(frame)
         end
     end)
 end
-makeDraggable(game.CoreGui["NUNU PRO"].Main)
+makeDraggable(game.CoreGui["NUNU PRO"].Main.Topbar)
