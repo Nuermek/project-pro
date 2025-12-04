@@ -6,3 +6,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/m
 
 kill (Kill.lua)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/Kill.lua", true))()
+
+AFK (AFK20M.lua) (ลองแบบ HUB)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nuermek/project-pro/main/AFK20M.lua", true))()
