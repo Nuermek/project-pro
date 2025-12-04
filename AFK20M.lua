@@ -29,53 +29,6 @@ end)
 Section:NewSlider("เดินเร็ว 16-500", "SliderInfo", 500, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
--- Drag System (แข็งที่สุด)
-local UIS = game:GetService("UserInputService")
-
-local function makeDraggable(frame)
-    local dragging, dragInput, startPos, startMousePos
-
-    frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            dragging = true
-            startMousePos = input.Position
-            startPos = frame.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement then
-            dragInput = input
-        end
-    end)
-
-    UIS.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            local delta = input.Position - startMousePos
-            frame.Position = UDim2.new(
-                startPos.X.Scale,
-                startPos.X.Offset + delta.X,
-                startPos.Y.Scale,
-                startPos.Y.Offset + delta.Y
-            )
-        end
-    end)
-end
-
-
--- หา frame ใหญ่ที่สุดเพื่อลาก (โคตรชัวร์)
-task.wait(1)
-local main = game.CoreGui["NUNU PRO"]:FindFirstChild("Main")
-
-if main then
-    makeDraggable(main)
-    print("Dragging Enabled on: Main")
-else
-    warn("Main frame not found!")
-end
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.H, function()
+	Library:ToggleUI()
+end)
