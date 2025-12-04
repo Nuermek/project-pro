@@ -26,6 +26,6 @@ Section:NewToggle("afk", "ToggleInfo", function(state)
         print("Toggle Off")
     end
 end)
-Section:NewSlider("เดินเร็ว 0-500", "SliderInfo", 500, 16, function(s)
+Section:NewSlider("เดินเร็ว 16-500", "SliderInfo", 500, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
