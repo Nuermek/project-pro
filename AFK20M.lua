@@ -61,4 +61,16 @@ local function makeDraggable(frame)
         end
     end)
 end
-makeDraggable(game.CoreGui["NUNU PRO"].Main.Topbar)
+local gui = game.CoreGui:FindFirstChild("NUNU PRO")
+local frame
+
+for i,v in pairs(gui:GetDescendants()) do
+    if v:IsA("Frame") or v:IsA("ImageLabel") then
+        frame = v
+        break
+    end
+end
+
+if frame then
+    makeDraggable(frame)
+end
